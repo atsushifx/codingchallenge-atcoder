@@ -1,0 +1,18 @@
+{
+	"configurations": [
+		{
+			"name": "typescript debuggger",
+			"type": "node",
+			"request": "launch",
+			"args": [
+				"${relativeFile}"
+			],
+			"runtimeArgs": [
+				"-r",
+				"ts-node/register"
+			],
+			"cwd": "${workspaceRoot}",
+			"internalConsoleOptions": "openOnSessionStart"
+		}
+	]
+}
