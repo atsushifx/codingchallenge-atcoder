@@ -10,22 +10,21 @@ const read = () => String((wordit.next()).value);
 
 // main
 const main = function () {
-    // TODO edit this code, this code is for https://atcoder.jp/contests/practice/tasks/practice_1
+	// TODO edit this code, this code is for https://atcoder.jp/contests/practice/tasks/practice_1
 
-    // param
-    let a: number = Number(read());
-    let b: number = Number(read());
-    let c: number = Number(read());
-    let s: string = read();
+	// param
+	let a: number = Number(read());
+	let b: number = Number(read());
+	let c: number = Number(read());
+	let s: string = read();
 
-	console.log('$a $b $c $s')
 	let sum = a + b + c;
-    // solve
-    let ans = `${sum} ${s}`;
+	// solve
+	let ans = `${sum} ${s}`;
 
-    // answer
-    console.log(ans);
+	// answer
+	console.log(ans);
 
-    return;
+	return;
 };
 main();
