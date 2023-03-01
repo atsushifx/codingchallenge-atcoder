@@ -10,19 +10,19 @@ const read = () => String((wordit.next()).value);
 
 // main
 const main = function () {
-    // TODO edit this code, this code is for https://atcoder.jp/contests/practice/tasks/practice_1
+	// TODO edit this code, this code is for https://atcoder.jp/contests/practice/tasks/practice_1
 
-    // param
-    let a: number = Number(read());
-    let b: number = Number(read());
-    
+	// param
+	let a: number = Number(read());
+	let b: number = Number(read());
+
 	// solve
-	const isOdd = ((a % 2) != 0) && ((b % 2) != 0)
-    
-    
-    // answer
-    console.log(isOdd ? "Odd" : "Even");
+	const isOdd: boolean = ((a % 2) != 0) && ((b % 2) != 0)
 
-    return;
+
+	// answer
+	console.log(isOdd ? "Odd" : "Even");
+
+	return;
 };
 main();

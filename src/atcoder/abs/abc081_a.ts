@@ -13,17 +13,13 @@ const main = function () {
 	// TODO edit this code, this code is for https://atcoder.jp/contests/practice/tasks/practice_1
 
 	// param
-	let a: number = Number(read());
-	let b: number = Number(read());
-	let c: number = Number(read());
-	let s: string = read();
+	let nl: string[] = read().split("");
+	let nl2: number[] = nl.map((v) => Number(v));
 
-	let sum = a + b + c;
 	// solve
-	let ans = `${sum} ${s}`;
-
+	let count: number = nl2.reduce((a, b) => a + b, 0);
 	// answer
-	console.log(ans);
+	console.log(count);
 
 	return;
 };
