@@ -38,7 +38,7 @@ indent_style = space
 # Programming Languages
 
 [**.rb]
-indent_size = tab
 tab_width = 4
+indent_size = 4
 indent_style = space
 
