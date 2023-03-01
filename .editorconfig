@@ -1,6 +1,7 @@
 # EditorConfig is awesome: https://EditorConfig.org
 #
-# @(#) : default settings for code of contests
+# @(#) : default settings for coding Challeng
+#
 
 # top-most EditorConfig file
 ##
@@ -32,5 +33,12 @@ indent_style = tab
 [**.md]
 indent_size = tab
 tab_width = 2
+indent_style = space
+
+# Programming Languages
+
+[**.rb]
+indent_size = tab
+tab_width = 4
 indent_style = space
 
