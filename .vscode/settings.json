@@ -1,1 +1,10 @@
-{}
+{
+	"code-runner.clearPreviousOutput": true,
+	"code-runner.executorMap": {
+		"go": "go run .",
+		"typescript": "ts-node",
+		"racket": "racket",
+		"scheme": "racket",
+		"ruby": "ruby"
+	}
+}
