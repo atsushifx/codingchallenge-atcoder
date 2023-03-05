@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		/* Projects */
+		"incremental": true,
+		/* Language and Environment */
+		"target": "esnext",
+		/* Modules */
+		"module": "commonjs",
+		"types": [],
+		"outDir": "./dist",
+		"newLine": "lf",
+		"stripInternal": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		/* Type Checking */
+		"strict": true,
+		"skipLibCheck": true
+	}
+}
