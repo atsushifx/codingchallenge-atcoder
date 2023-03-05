@@ -162,5 +162,5 @@ out
 .pnp.*
 
 # pnpm
-pnpm-lock.*
+*-lock.*
 
