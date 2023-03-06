@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"incremental": true,
+		"target": "esnext",
+		"module": "commonjs",
+		"types": [],
+		"outDir": "./dist",
+		"newLine": "lf",
+		"stripInternal": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
+		"skipLibCheck": true
+	}
+}
