@@ -36,6 +36,13 @@ tab_width = 2
 indent_style = space
 
 ###  Programming Languages
+# typescript
+[**.{js, ts}]
+tab_width = 2
+indent_size = 2
+indent_style = space
+
+
 # Ruby
 [**.rb]
 tab_width = 2
