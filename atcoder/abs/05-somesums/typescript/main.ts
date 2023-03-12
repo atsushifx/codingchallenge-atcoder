@@ -3,45 +3,52 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-// atcoder solver : abs some sums
-
-import * as fs from "fs";
+// atcoder problem slolver template
+import * as fs from "fs"
+import { mainModule } from "process";
 
 /**
- * 標準入力から読み込み
+ * stdIO : parameter read and solve outputs
+ *
+ *
  */
-class sI {
-	const inputs: string = (fs.readFileSync(process.stdin.fd, "utf8"))
-	const inputArray: string[] = inputs.split(/\s/)
-let inputIndex = 0;
+class stdIO {
+	// property
+	// for stdin
+	inputs: string = ""
+	inputArray: string[]
+	inputIndex: number = 0;
 
-// atcoder lib:stdin
-function getNext(): string {
-	return inputArray[inputIndex++];
-}
+	// for stdout
+	outputBuffer: string = "";
 
-function getNextNum(): number {
-	return Number(getNext());
-}
-
-function getNums(N: number): number[] {
-	const arr: number[] = [];
-	for (let i: number = 0; i < N; ++i) {
-		arr[i] = getNextNum();
+	// constructor]
+	// readline from stdin and split this
+	constructor() {
+		this.inputs = (fs.readFileSync(process.stdin.fd, "utf8"))
+		this.inputArray = this.inputs.split(/\s/)
+		this.inputIndex = 0
 	}
-	return arr;
-}
-}
 
-/**
- * buffered Print
- */
-class bP {
-	static outputBuffer: string = "";
+	// input meethod
+	getNext(): string {
+		return this.inputArray[this.inputIndex++];
+	}
 
-	// toString
-	// methods
-	static toString(...args: any[]): string {
+	getNextNum(): number {
+		return Number(this.getNext());
+	}
+
+	getNums(N: number): number[] {
+		const arr: number[] = [];
+		for (let i: number = 0; i < N; ++i) {
+			arr[i] = this.getNextNum();
+		}
+		return arr;
+	}
+
+	// bufferd output methods
+	toString(...args: any[]): string {
 		const buff: string[] = []
 		args.forEach((arg: any) => {
 			buff.push(this._toString(arg))
@@ -51,32 +58,33 @@ class bP {
 	}
 
 	// 出力
-	static print(...args: any): void {
+	print(...args: any): void {
 		this.outputBuffer += this.toString(...args)
 	}
 
-	static p(...args: any[]): void {
+	p(...args: any[]): void {
 		this.print(...args)
 	}
 
-	static println(...args: any): void {
+	println(...args: any): void {
 		this.print(...args);
 		this.print("\n")
 	}
 
 
-	static flush(): void {
+	flush(): void {
 		console.log(this.outputBuffer)
 		this.outputBuffer = ""
 	}
 
 	// 引数を文字列か
-	static _toString(arg1: any): string {
+	private _toString(arg1: any, quote: boolean = false): string {
 		let buff = ""
+
 		if (arg1 === null) {
 			buff = "null"
-		} else if (arg1 == "") {
-		} else if (arg1 == "\n") {
+		} else if (arg1 === "") {
+		} else if (arg1 === "\n") {
 			buff = "\n"
 		} else if (Array.isArray(arg1)) {
 			buff = this._arrayToString(arg1)
@@ -86,7 +94,11 @@ class bP {
 					buff = (typeof arg1);
 					break
 				case "string":
-					buff = "'" + arg1 + "'"
+					if (quote) {
+						buff = "'" + arg1 + "'";
+					} else {
+						buff = arg1
+					}
 					break
 				default:
 					buff = arg1.toString()
@@ -97,27 +109,40 @@ class bP {
 	}
 
 	// 配列を文字列に
-	static _arrayToString(arr: any[]): string {
+	private _arrayToString(arr: any[]): string {
 		const buff: string[] = []
 		arr.map((e) => {
-			buff.push(this._toString(e))
+			buff.push(this._toString(e, true))
 		})
 		const buff2 = "[ " + buff.join(", ") + " ]"
 		return buff2;
 	}
 }
 
-//
-
-// exec main
-solve();
-flush()
-
-
-
-// solver main function
-function solve(): void {
-	const [N, A, B]: number[] = getNums(3);
-
-	console.log(N, [A, B]);
+// solver functions
+function ketasum(n: number): number {
+	const nl: number[] = n.toString().split("").map((e) => Number(e))
+	const sum = nl.reduce((a, b) => a + b)
+	return sum
 }
+
+
+// main routin
+const io: stdIO = new stdIO()
+solve()
+io.flush()
+
+// solver main()
+function solve() {
+	const [N, A, B] = io.getNums(3)
+
+	let total = 0
+	for (let i = 1; i <= N; ++i) {
+		const sum = ketasum(i)
+		if (A <= sum && sum <= B) {
+			total += i
+		}
+	}
+	io.p(total)
+}
+

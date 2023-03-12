@@ -3,8 +3,8 @@
 // This software is released under the MIT License.
 // https://opensource.org/licenses/MIT
 
-// atcoder problem solver template
-// problem practice1
+// atcoder problem solver
+// problem; abs / some sums
 package main
 
 import (
@@ -44,7 +44,6 @@ func getNums(size int) []int {
 	return buff
 }
 
-
 // initialize
 func initialize() {
 	stdinBuffer := make([]byte, IOBUFFSIZE)
@@ -60,14 +59,29 @@ func main() {
 	Stdout.Flush()
 }
 
+// solver's utilty
+func addNums(num int) int {
+	var sum int = 0
+	for num > 0 {
+		sum += num % 10
+		num /= 10
+	}
+	return sum
+}
+
 // problem solver
 func solve() {
-	var a, b, c int
-	a = getNextInt()
-	b = getNextInt()
-	c = getNextInt()
-	var sum = a + b + c
+	var N, A, B int
+	N = getNextInt()
+	A = getNextInt()
+	B = getNextInt()
 
-	var inputs string = getNext()
-	fmt.Fprintf(Stdout, "%d %s\n", sum, inputs)
+	var total int = 0
+	for i := 1; i <= N; i++ {
+		var sum int = addNums(i)
+		if A <= sum && sum <= B {
+			total += i
+		}
+	}
+	fmt.Fprintln(Stdout, total)
 }
