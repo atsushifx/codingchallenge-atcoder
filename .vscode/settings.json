@@ -6,5 +6,6 @@
 		"racket": "racket",
 		"scheme": "racket",
 		"ruby": "ruby"
-	}
+	},
+	"better-comments.highlightPlainText": true
 }
