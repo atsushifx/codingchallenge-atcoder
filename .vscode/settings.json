@@ -1,11 +1,11 @@
 {
+	"better-comments.highlightPlainText": true,
 	"code-runner.clearPreviousOutput": true,
-	"code-runner.executorMap": {
-		"go": "go run .",
-		"typescript": "ts-node",
-		"racket": "racket",
-		"scheme": "racket",
-		"ruby": "ruby"
+	"code-runner.fileDirectoryAsCwd": true,
+	"code-runner.languageIdToFileExtensionMap": {
+		"racket": ".rkt",
 	},
-	"better-comments.highlightPlainText": true
+	"code-runner.executorMap": {
+		"racket": "cd $dir",
+	},
 }

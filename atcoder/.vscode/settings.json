@@ -1,0 +1,6 @@
+{
+	"code-runner.clearPreviousOutput": true,
+	"code-runner.executorMap": {
+		"racket": "cd $dir &&\ncat ../test/sample-1.in | racket $fileName",
+	}
+}
