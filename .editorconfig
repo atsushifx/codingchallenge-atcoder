@@ -53,3 +53,9 @@ indent_style = space
 indent_style = tab
 tab_width = 4
 indent_size = tab
+
+# Racket
+[**.{scm,rkt}]
+indent_style = space
+tab_width = 2
+indent_size = 2
