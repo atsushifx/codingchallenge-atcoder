@@ -9,6 +9,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"regexp"
 	"strconv"
 	"strings"
 )
@@ -52,43 +53,18 @@ func main() {
 
 // problem solver
 func solve() {
-	// initialize
-	var Keywords = []string{
-		"dream",
-		"dreamer",
-		"erase",
-		"eraser",
-	}
 
 	// input
-	var S string = getNext()
+	var str string = getNext()
 
 	// solve
-	var match bool = isMatch(S, Keywords)
+	var matcher string = `^(dream|dreamer|erase|eraser)*$`
+	var match bool = regexp.MustCompile(matcher).Match([]byte(str))
 
 	// output
 	if match {
-		fmt.Println("YES")
+		fmt.Fprintln(Stdout, "YES")
 	} else {
-		fmt.Println("NO")
+		fmt.Fprintln(Stdout, "NO")
 	}
-
-}
-
-// solver function
-func isMatch(str string, keywords []string) bool {
-	var ret bool = false
-	for _, key := range keywords {
-		if str == key {
-			ret = true
-			break
-		} else if strings.HasSuffix(str, key) {
-			var str2 string = fmt.Sprint(str[:len(str)-len(key)])
-			ret = isMatch(str2, keywords)
-			break
-		} else {
-
-		}
-	}
-	return ret
 }
