@@ -1,6 +1,7 @@
 {
 	"code-runner.clearPreviousOutput": true,
 	"code-runner.executorMap": {
+		"ruby": "cd $dir &&\ncat ../test/sample-1.in | ruby $fileName",
 		"racket": "cd $dir &&\ncat ../test/sample-1.in | racket $fileName",
 	}
 }
