@@ -14,6 +14,7 @@ import (
 
 // Global Variables
 const IOBUFFSIZE = 10 ^ 6
+const N = 10 ^ 5
 
 var Stdin = bufio.NewScanner(os.Stdin)
 var Stdout = bufio.NewWriter(os.Stdout)
@@ -41,18 +42,18 @@ type TPoint struct {
 	y int64
 }
 
-func getNextTPoint() *TPoint {
+func getNextTPoint() TPoint {
 	var tp = new(TPoint)
 
 	tp.t = getNextNum()
 	tp.x = getNextNum()
 	tp.y = getNextNum()
-	return tp
+	return *tp
 }
 
 // main routin
 // global var
-var TP0 (*TPoint) = &TPoint{0, 0, 0}
+var TP0 (TPoint) = TPoint{0, 0, 0}
 
 // initialize
 func initialize() {
@@ -69,15 +70,48 @@ func main() {
 	Stdout.Flush()
 }
 
-// problem solver
-func solve() {
-	// input
-	var n int64 = getNextNum()
-	var tplist = [](*TPoint){TP0}
+func abs64(x int64) int64 {
+	if x >= 0 {
+		return x
+	} else {
+		return -x
+	}
+}
 
+func canMoveList(tp *[N + 1]TPoint, n int64) bool {
 	for i := (int64)(1); i <= n; i++ {
+		var dt int64 = abs64(tp[i].t-tp[i-1].t) -
+			(abs64(tp[i].x-tp[i-1].x) + abs64(tp[i].y-tp[i-1].y))
+
+		if dt < 0 {
+			return false
+		}
+		if (dt % 2) > 0 {
+			return false
+		}
 
 	}
+	return true
+}
 
-	fmt.Fprintf(Stdout, "%v\n", tplist)
+// problem solver
+func solve() {
+	// initialize
+	var tplist [N + 1]TPoint
+	tplist[0] = TP0
+	// input
+	var n int64 = getNextNum()
+	for i := (int64)(1); i <= n; i++ {
+		tplist[i] = getNextTPoint()
+	}
+
+	// solve
+	var canMove bool = canMoveList(&tplist, n)
+
+	// output
+	if canMove {
+		fmt.Fprintf(Stdout, "Yes\n")
+	} else {
+		fmt.Fprintf(Stdout, "No\n")
+	}
 }
