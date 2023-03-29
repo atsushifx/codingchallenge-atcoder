@@ -1,7 +1,8 @@
 {
 	"code-runner.clearPreviousOutput": true,
+	"code-runner.fileDirectoryAsCwd": true,
 	"code-runner.executorMap": {
+		"typescript": "cd $dir &&\nts-node $fileName",
 		"racket": "cd $dir &&\nracket $fileName",
 	},
-	"code-runner.fileDirectoryAsCwd": true
 }
