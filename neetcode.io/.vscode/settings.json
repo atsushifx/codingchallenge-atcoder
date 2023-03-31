@@ -6,4 +6,5 @@
 		"typescript": "cd $dir &&\nts-node $fileName",
 		"racket": "cd $dir &&\nracket $fileName",
 	},
+	"parrot-vscode.apiEndpoint": "http://localhost:8000",
 }
