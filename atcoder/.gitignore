@@ -1,0 +1,20 @@
+## ignore file for git
+#
+# @(#) : git ignore file for code of contests
+#
+# @author	Furukawa, Atsushi <atsushifx@aglabo.com>
+# @version	1.0.0
+# @date		2023-02-10
+#
+# @description
+# gitignore for code of contests.
+# this file is common settings about os, editor created files, setting files
+#<<
+
+##  General settings
+
+
+## Test files
+*/test/*
+*/tests/*
+

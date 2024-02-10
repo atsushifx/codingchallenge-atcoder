@@ -35,27 +35,3 @@ indent_size = tab
 tab_width = 2
 indent_style = space
 
-###  Programming Languages
-# typescript
-[**.ts]
-tab_width = 2
-indent_size = 2
-indent_style = space
-
-# Ruby
-[**.rb]
-tab_width = 2
-indent_size = 2
-indent_style = space
-
-# go
-[**.go]
-indent_style = tab
-tab_width = 4
-indent_size = tab
-
-# Racket
-[**.{scm,rkt}]
-indent_style = space
-tab_width = 2
-indent_size = 2
