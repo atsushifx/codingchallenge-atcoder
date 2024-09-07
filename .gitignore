@@ -41,4 +41,7 @@ $~*
 !.vscode/extensions.json
 !.vscode/*.code-snippets
 
+### online judge tools
+**/*.in
+**/*.out
 
