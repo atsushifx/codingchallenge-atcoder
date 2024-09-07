@@ -1,9 +1,0 @@
-{
-	"code-runner.clearPreviousOutput": true,
-	"code-runner.executorMap": {
-		"ruby": "cd $dir &&\ncat ../test/sample-1.in | ruby $fileName",
-		"typescript": "cd $dir &&\ncat ../test/sample-1.in | ts-node $fileName",
-		"go": "cd $dir &&\ncat ../test/sample-1.in | go run $fileName",
-		"racket": "cd $dir &&\ncat ../test/sample-1.in | racket $fileName",
-	}
-}

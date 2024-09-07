@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 #
 # Copyright (c) 2023 Furukawa, Atsushi <atsushifx@aglabo.com>
 # 
