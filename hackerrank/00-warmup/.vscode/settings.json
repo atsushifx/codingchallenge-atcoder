@@ -1,9 +1,0 @@
-{
-	"code-runner.executorMap": {
-		"ruby": "cd $dir && ruby $fileName",
-		"go": "go run",
-		"typescript": "ts-node",
-		"ocaml": "ocaml",
-		"racket": "racket",
-	}
-}
